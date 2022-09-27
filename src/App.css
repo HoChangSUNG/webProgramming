@@ -1,0 +1,1513 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header css */
+
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  position: relative;
+  height: 190px;
+  border-bottom: 3px solid red;
+}
+
+.header_content {
+  height: 130px;
+  border-bottom: 1px solid rgba(102, 102, 102, 0.2);
+}
+.contents {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+textarea{
+  width: 30px;
+  height: 24px;
+  /* border: none; */
+  resize: none;
+  margin-left:10px ;
+
+}
+.header_content .contents h1 span {
+  font-weight: 300;
+  font-size: 16px;
+  color: #222;
+  letter-spacing: 0.313em;
+  line-height: 1.5em;
+}
+
+.header_content .contents h1 {
+  display: inline-flex;
+  align-items: baseline;
+  height: 50%;
+  vertical-align: baseline;
+}
+
+.header_content .contents h1 a {
+  height: 100%;
+}
+
+.header_content .contents h1 a img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.memberInfo_wrap {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.header_content .contents .memberInfo_wrap li {
+  padding-left: 44px;
+  margin-top: 2px;
+  height: 100%;
+}
+
+.header_content .contents .memberInfo_wrap li a {
+  display: block;
+  position: relative;
+  padding-bottom: 19px;
+}
+
+.header_content .contents .memberInfo_wrap li a img {
+  width: 36px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+.header_content .contents .memberInfo_wrap li a span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 13px;
+  color: #666;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+}
+
+.menu {
+  height: 60px;
+  display: flex;
+  width: 980px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.menu li {
+  margin-left: 10px;
+  margin-right: 40px;
+}
+
+.menu li h2 a {
+  color: #222;
+}
+
+.hamburger {
+  display: none;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 4px;
+  background-color: #373737;
+  display: block;
+  margin: 5px auto;
+}
+
+.hamburgerDisapperBtnDiv {
+  width: 200px;
+  height: 200px;
+  display: none;
+  position: relative;
+}
+
+.hamburgerDisapperBtn {
+  width: 20px;
+  height: 20px;
+  margin-top: 40px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  /*header*/
+  .hamburger {
+    display: block;
+  }
+
+  .header_content .contents h1 {
+    display: none;
+  }
+
+  .memberInfo_wrap {
+    justify-content: flex-start;
+    margin-top: 100px;
+    margin-left: 20px;
+    position: relative;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 120px;
+    background-color: white;
+    display: none;
+    flex-shrink: 0;
+  }
+  #memberInfo_wrap li {
+    width: 70px;
+    height: 75px;
+    margin-left: -20px;
+  }
+
+  .contents {
+    justify-content: flex-start;
+  }
+}
+
+.offActive {
+  display: none;
+}
+
+.onActive {
+  display: flex;
+}
+.onActiveBlock {
+  display: block;
+}
+
+/* movieCarousel.css */
+
+.movie_carousel_container {
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+.movie_carousel_wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.movie_carousel_name_wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 800;
+}
+.movie_carousel_button_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.movie_carousel_contents {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie_carousel_item {
+  width: 21%;
+  margin-top: 10px;
+  position: relative;
+}
+
+.movie_carousel_img {
+  width: 100%;
+  border-radius: 25px;
+  position: relative;
+}
+
+.movie_carousel_img_limit_age {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  border-radius: 50%;
+  top: 2%;
+  right: 6%;
+  line-height: 30px;
+  color: white;
+}
+
+.ageAlLimit_color {
+  background-color: green;
+}
+
+.age12Limit_color {
+  background-color: blue;
+}
+
+.age15Limit_color {
+  background-color: orange;
+}
+.carousel_movie_name {
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 90%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.movie_carousel_item div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie_carousel_img_wrap::after {
+  content: attr(data-rank);
+  position: relative;
+  font-size: 60px;
+  right: 60px;
+  bottom: 30px;
+  font-style: italic;
+  color: white;
+  line-height: 0%;
+  z-index: 3;
+  text-shadow: 2px 5px 5px rgb(0 0 0 / 45%);
+}
+
+/* swiper button */
+
+.swiper-button-next {
+  height: 20px;
+  background-image: url(../public/img/arrowL.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  display: inline;
+  font-size: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgb(0 0 0 / 20%);
+
+  transform: rotate(-180deg);
+  width: auto;
+  padding: 16px;
+}
+
+.swiper-button-prev {
+  height: 20px;
+  background-image: url(../public/img/arrowL.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  display: inline;
+  font-size: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgb(0 0 0 / 20%);
+  width: auto;
+  padding: 16px;
+}
+
+/* event */
+.movie_event_container {
+  margin-bottom: 200px;
+}
+.movie_event_name_wrap {
+  max-width: 1300px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 600;
+}
+.movie_event_contents {
+  max-width: 1300px;
+  display: flex;
+  /* flex-wrap: wrap; */
+
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.movie_event_item {
+  width: 30%;
+  height: auto;
+}
+.movie_event_item:nth-child(4) {
+  display: none;
+}
+.main_event_img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.movie_event_item strong {
+  display: block;
+  overflow: hidden;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 23px;
+  color: #222;
+  line-height: 1.444em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie_event_item span {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  color: #666;
+  line-height: 1.429em;
+}
+
+@media only screen and (max-width: 750px) {
+  .movie_carousel_item {
+    width: 41%;
+  }
+  .movie_event_item {
+    width: 40%;
+  }
+  .movie_event_item:nth-child(3) {
+    display: none;
+  }
+}
+
+/* 영화 리스트 페이지 */
+
+.movie_list_container {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.tit-movie-list-heading-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100px;
+  padding-top: 30px;
+  border-bottom: 5px solid #241d1e;
+}
+
+.tit-movie-list-heading-wrap h3 {
+  display: inline-block;
+  position: relative;
+  height: inherit;
+  margin: 0;
+  background-image: none;
+  color: #222;
+  font-weight: 800;
+  font-size: 36px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.movielist-sect-sorting {
+  height: 100px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.movie-select-option {
+  height: 30px;
+  padding-right: 10px;
+
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.sorting-button {
+  font-weight: 500;
+  font-size: 12px;
+
+  border: 2px solid #7b7b7b;
+  color: #7b7b7b;
+  height: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.movie_list_contents {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.movie_list_item {
+  width: 26%;
+  margin-bottom: 30px;
+}
+
+.movie_list_item img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.movie_list_item_rank {
+  display: block;
+  height: 28px;
+  margin-bottom: 4px;
+  margin-top: 5px;
+  color: #ffffff;
+  background: #666;
+
+  font-size: 19px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.movie_list_item_rank_top_3_color {
+  background: #fb4357;
+}
+
+.movie_list_item_name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.movie_list_item_score {
+  color: #666;
+  font-size: 15px;
+}
+
+.movie_list_item_open {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.movie_list_item_book {
+  background: #fb4357;
+  border-radius: 3%;
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.movie_list_contents::after {
+  content: "";
+  width: 26%;
+}
+
+@media only screen and (max-width: 750px) {
+  /*header*/
+  .movie_list_item {
+    width: 35%;
+  }
+  .movie_list_contents::after {
+    content: none;
+    width: 0%;
+  }
+}
+
+/*로그인 페이지*/
+
+.login-page-container {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.login-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 266px;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  width: 300px;
+  display: block;
+  height: 35px;
+  padding: 0 5px 0 40px;
+  border: 3px solid #666;
+  line-height: 33px;
+
+  margin-top: 10px;
+}
+
+.login input[type="text"] {
+  background: url(../public/img/login/login_id.png);
+  background-repeat: no-repeat;
+}
+
+.login input[type="password"] {
+  background: url(../public/img/login/login_pw.png);
+  background-repeat: no-repeat;
+}
+
+#submit-login {
+  width: 300px;
+  height: 42px;
+  line-height: 37px;
+  left: 0;
+  position: static;
+  margin-top: 5px;
+  padding: 2px;
+  background: #fb4357;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.fieldset-title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.login_fieldset_div {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* 영화 상세 페이지  */
+.movie-detail-container {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.movie-detail-contents {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+}
+
+.movie-detail-poster-img {
+  width: 20%;
+  margin-right: 40px;
+}
+
+.movie-detail-poster-img img {
+  width: 100%;
+}
+
+.movie-detail-info-wrap {
+  width: 77%;
+}
+
+.movie-dtail-info-title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.movie-dtail-info-booking-rank {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #d9d6c8;
+}
+
+.movie-dtail-info-booking-rank,
+.movie-dtail-info-persons,
+.movie-dtail-info-otherInfo,
+.movie-dtail-info-openDate {
+  color: #333333;
+  font-weight: 600;
+  margin-top: 5x;
+  margin-bottom: 5px;
+}
+
+.movie-dtail-info-persons {
+  margin-top: 26px;
+}
+
+.wrap-persongrade {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie_persongrade {
+  width: 100%;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.movie_point_list_container {
+  border-top: 1px solid black;
+}
+
+.movie_point_list_item {
+  height: 200px;
+  /* white-space: normal; */
+  float: left;
+  width: 50%;
+  display: relative;
+}
+
+.movie_point_list_item:nth-child(2n + 1) {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie_point_list_item:nth-child(2n + 2) {
+  border-bottom: 1px solid #ddd;
+}
+
+.real-rating {
+  position: relative;
+  width: 100%;
+  padding: 50px;
+  background: #f6f6f6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.real-rating .title {
+  font-size: 23px;
+  color: #212224;
+  font-weight: 500;
+  line-height: 1.8em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.real-rating .title strong {
+  color: #fb4357;
+}
+.comment-title-desc {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  word-break: break-all;
+  width: 700px;
+}
+
+.comment-title-desc em {
+  font-size: 25px;
+  color: #222222;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.real-rating .wrap_btn {
+  position: absolute;
+  top: 45px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.real-rating .wrap_btn .link-gradewrite {
+  background-color: #fb4357;
+  height: 80px;
+  width: 140px;
+}
+
+.real-rating .wrap_btn a {
+  width: 76px;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+
+.real-rating .wrap_btn .link-reviewwrite {
+  background-color: #666666;
+  height: 80px;
+  width: 140px;
+}
+
+.real-rating .wrap_btn a {
+  width: 76px;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+
+.link-gradewrite span {
+  display: block;
+  line-height: 80px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.link-reviewwrite span {
+  display: block;
+  line-height: 80px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.movie_point_list_item {
+  padding: 20px;
+}
+
+.movie_point_comment_img {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-image: url("../public/img/logo/profile.png");
+  margin-right: 30px;
+  display: inline-block;
+  float: left;
+}
+
+.movie_point_comment_name {
+  word-break: break-all;
+  float: left;
+  font-size: 18px;
+}
+
+.movie_point_comment_content {
+  word-break: break-all;
+  float: left;
+  width: 80%;
+  font-size: 17px;
+}
+
+.movie_point_list_comment_sub {
+  display: fixed;
+  height: 50px;
+  margin-top: 140px;
+  margin-left: 90px;
+  color: #666666;
+  font-size: 18px;
+}
+
+.comment_createdDate {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.comment_like_cnt {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.comment_update {
+  display: inline-block;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.create_comment_wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-rating-select-option {
+  height: 40px;
+  width: 70px;
+  font-size: 20px;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.comment-input-box {
+  height: 40px;
+  width: 600px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.comment-submit {
+  height: 40px;
+  width: 50px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+.offCommentWriteActive {
+  display: none;
+}
+
+/*로그인 페이지*/
+
+.signUp-page-container {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.signUp-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 266px;
+}
+
+.signUp input[type="text"] {
+  width: 300px;
+  display: block;
+  height: 35px;
+  padding-left: 10px;
+  border: 3px solid #666;
+  line-height: 33px;
+
+  margin-top: 10px;
+}
+
+#submit-signUp {
+  width: 300px;
+  height: 42px;
+  line-height: 37px;
+  left: 0;
+  position: static;
+  margin-top: 5px;
+  padding: 2px;
+  background: #fb4357;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.signUp_fieldset_div {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* my page */
+
+.sect_person_info {
+  height: 300px;
+  margin: 0 auto;
+  background: #f6f6f6;
+}
+
+.sect-person-div {
+  float: left;
+  width: 20%;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.sect-person-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.mypage-sect-personal-info {
+  float: left;
+  width: 60%;
+  height: auto;
+  margin-top: 25px;
+  margin-left: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid#666;
+}
+
+.mypage-person-name {
+  font-size: 40px;
+  margin-right: 20px;
+}
+.mypage-person-id {
+  font-size: 20px;
+  color: #342929;
+}
+
+.booking-page-container {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.booking-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-info-content {
+  position: relative;
+}
+
+.booking-info-content-border {
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.booking-info-content h1 {
+  display: inline-block;
+}
+
+.booking-info-content span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  color: #666;
+}
+
+.booking-info-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f6f6f6;
+  padding: 10px;
+}
+
+.booking-info-item-img-wrap {
+  position: relative;
+}
+
+.booking-info-item-img {
+  width: 15%;
+}
+
+.booking-info-item-movieName {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  font-size: 25px;
+  color: #342929;
+}
+
+.booking-info-item-theater {
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 170px;
+  font-size: 23px;
+  color: #342929;
+}
+
+.booking-info-item-seat-position {
+  display: inline-block;
+  position: absolute;
+  top: 85px;
+  left: 170px;
+  font-size: 20px;
+  color: #342929;
+}
+
+.booking-info-item-time {
+  display: inline-block;
+  position: absolute;
+  top: 118px;
+  left: 170px;
+  font-size: 20px;
+  color: #342929;
+}
+
+.movie_cancel_button_click {
+  background: #fb4357;
+  border-radius: 3%;
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  cursor: pointer;
+}
+
+.movie-dtail-info-to-booking {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  background-color: #fb4357;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* 극장(상영 시간표) */
+
+.theater_schedule_container {
+  margin-top: 80px;
+}
+
+.theater_schedule_wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+}
+
+.theater_schedule_item {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+
+.theater_schedule_item_age_limit {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+}
+
+.theater_schedule_item_show_movie_name {
+  display: inline-block;
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+.theater_schedule_item_first_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theater_schedule_item_show_movie_sub_info {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #666;
+}
+.theater_schedule_item_show_movie_theater_info {
+  font-size: 20px;
+  margin-left: 54px;
+  margin-top: 30px;
+}
+
+.theater_schedule_item_third_wrapper {
+  margin-top: 7px;
+  margin-left: 54px;
+  display: flex;
+}
+
+.theater_schedule_item_show_movie_theater_seat_info {
+  border: 1px solid black;
+  width: 90px;
+  height: 70px;
+  border: 1px solid #cbcabe;
+  padding-top: 2px;
+}
+
+.theater_schedule_main_page_time {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.theater_schedule_main_page_available_seat {
+  text-align: center;
+  font-size: 21px;
+  color: #2275a4;
+}
+
+.theater_schedule_item_third_wrapper {
+  cursor: pointer;
+}
+
+
+
+
+/* 영화,시간 선택하는 예매 첫번째 부분 시작 */
+.tikect_selection_movie_container {
+  margin-top: 100px;
+}
+
+.tikect_selection_movie_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 600px;
+  background-color: #f2f0e4;
+}
+
+.tikect_selection_movie_select_movie_container {
+  width: 50%;
+  height: 600px;
+  float: left;
+  border-right: 1px solid #d4d3c9;
+  border-left: 1px solid #d4d3c9;
+}
+
+.tikect_selection_movie_select_theater_time_container {
+  width: 50%;
+  height: 600px;
+  float: left;
+  border-right: 1px solid #d4d3c9;
+}
+
+.tikect_selection_movie_select_movie_title_header,
+.tikect_selection_movie_select_theater_title_header {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #333;
+  color: white;
+  font-size: 22px;
+}
+
+.tikect_selection_movie_select_movie_movies_container {
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 30px;
+  border-top: 3px solid #d4d3c9;
+}
+
+.tikect_selection_movie_select_movie_movies_item {
+  margin-top: 3px;
+  padding: 2px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+}
+.tikect_selection_movie_select_movie_movies_limit_age {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  margin-right: 8px;
+  color: white;
+}
+.tikect_selection_movie_select_movie_movies_movie_name {
+  color: #333;
+  font-size: 18px;
+}
+.tikect_selection_movie_select_theater_info_container {
+  border-top: 3px solid #d4d3c9;
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 90%;
+  padding-top: 16px;
+}
+
+.tikect_selection_movie_select_theater_info_theater_name span:nth-child(1) {
+  color: #b54d15;
+  font-weight: bold;
+  margin-right: 7px;
+  margin-left: 3px;
+}
+
+.tikect_selection_movie_select_theater_info_theater_name span:nth-child(2) {
+  color: #333;
+  font-weight: bold;
+  margin-right: 7px;
+}
+.tikect_selection_movie_select_theater_info_theater_name span:nth-child(3) {
+  color: #666;
+}
+.tikect_selection_movie_select_theater_info_item_wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.tikect_selection_movie_select_theater_info_item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.tikect_selection_movie_select_theater_info_item_time {
+  border: 1px solid #d4d3c9;
+  font-size: 18px;
+  height: 32px;
+  width: 60px;
+  padding-top: 1px;
+  text-align: center;
+  cursor: pointer;
+}
+.tikect_selection_movie_select_theater_info_item_available_seat_num {
+  color: #3d7c35;
+  margin-left: 5px;
+}
+
+.selected_check_show_container {
+  height: 200px;
+  background-color: #333;
+}
+.selected_check_show_content_wrapper{
+  max-width: 1000px;
+  margin:0 auto;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.selected_check_show_content_img{
+  width: 120px;
+  margin-left: 30px;
+}
+.selected_check_show_content_img_content{
+  width: 100%;
+}
+
+.selected_check_show_content_movie_info{
+  color: white;
+  margin-left:30px;
+height: 170px;
+}
+.selected_check_show_content_movie_info p:nth-child(1){
+  margin-top: 20px;
+  font-size: 17px;
+}
+.selected_check_show_content_movie_info p:nth-child(2){
+  margin-top: 50px;
+}
+.selected_check_show_content_movie_info p:nth-child(3){
+  margin-top: 5px;
+}
+
+.selected_check_show_content_theater_info{
+  height:120px;
+  border-left: 1px solid #d4d3c9;
+  margin-left:30px;
+  padding-left: 10px;
+}
+.selected_check_show_content_real_theater,.selected_check_show_content_theater_position {
+  color: white;
+}
+.selected_check_show_content_real_theater{
+  margin-top: 30px;
+}
+.selected_check_show_content_theater_position{
+  margin-top: 10px;
+}
+.selected_check_show_content_real_theater span{
+  margin-left: 18px;
+}
+.selected_check_show_content_theater_position span{
+  margin-left: 7px;
+  
+}
+
+.next-seat-choice-button-div{
+  width: 140px;
+  height: 140px;
+  border-radius: 20%;
+  background: #333333;
+      border: 4px solid #d4d3c9;
+  
+  position: absolute;
+  right: 2%;
+  text-align: center;
+  
+}
+.clickable_available{
+  border:4px solid #e02339;
+  background: red;
+    cursor:pointer;
+
+}
+
+.ai_outline_arrow_right_booking_btn{
+  color: white;
+  position:relative;
+  margin-top: 10px;
+  font-size: 70px;
+}
+.next-seat-choice-button-div p{
+  font-size: 22px;
+  color: white;
+}
+
+.closedTime{
+  color: #888;
+  
+}
+
+.tikect_selection_box_clicked{
+  border: 1px solid #5c5c5c;
+  background-color: #333333;
+}
+
+.tikect_selection_box_clicked_font_color{
+  color:white;
+}
+
+.tikect_selection_box_clicked_font_color_closed_{
+  color: #333333;
+}
+
+
+
+/* ========================================================================= */
+
+.seat-booking-contatiner{
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+.seat-booking-content{
+  max-width: 1000px;
+  border: 1px solid #d4d3c9;
+  margin:0 auto;
+  height:700px;
+  background-color: #f2f0e4;
+  position: relative;
+}
+
+.seat-booking-content-header{
+  display: flex;
+  align-items: center;
+  /* height: 100px; */
+    border-bottom: 3px solid #d4d3c9;
+
+}
+
+.seat-booking-content-header-person-count{
+  width: 50%;
+  height:70px;
+  display: flex;
+  text-align: center;
+}
+.seat-booking-content-header-theater-info{
+  width: 50%;
+  height: 120px;
+  display: flex;
+  padding-top: 40px;
+}
+.seat-booking-content-header-theater-info div:nth-child(1){
+  margin-left: 10px;
+  height: 20px;
+  border-right: 1px solid #d4d3c9;
+  padding-right: 15px;
+}
+.seat-booking-content-header-theater-info div:nth-child(2){
+  padding-right: 20px;
+  margin-left: 20px;
+
+  border-right: 1px solid #d4d3c9;
+  height: 20px;
+}
+.seat-booking-content-header-theater-info div:nth-child(3){
+  margin-left: 20px;
+  height: 20px;
+}
+.seat-booking-content-header-theater-info div:nth-child(3) span{
+  color: #CA4D10;
+
+}
+.seat-booking-content-header-person-count-title{
+  width: 50px;
+  height: 70px;
+  line-height: 70px;
+  margin-right: 40px;
+  font-size: 22px;
+}
+
+.seat-booking-content-header-person-count-itemWrap{
+  display: flex;
+  width: 40%;
+  justify-content:space-around;
+  align-items: center;
+}
+.seat-booking-content-header-person-count-item{
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  line-height: 30px;
+  border: 1px solid #d6d3ce;
+  cursor: pointer;
+}
+.seat_numbering{
+  height: 400px;
+  margin: 100px;
+}
+.seat_numbering_screen{
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.seat_wrapper_class{
+  margin:0 auto;
+  margin-top: 40px;
+  height: 200px;
+  width: 70%;
+}
+.seat_wrapper_row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row_alphabet{
+  margin-right: 20px;
+  margin-left: 10px;
+
+  height: 26px;
+  line-height: 26px;
+}
+.row_item_wrap{
+  display: flex;
+  width: 30%;
+  height: 26px;
+}
+.row_item{
+  width: 20px;
+  height: 100%;
+  border:1px solid white;
+  text-align: center;
+  cursor: pointer;
+  background-color: #666;
+ color: #fff;
+  
+}
+.clcikedCnt{
+  border: 1px solid #5c5c5c;
+  background-color: #333;
+  color: white;
+}
+.clickedSeat{
+  background-color: #ad1712;
+
+}
+.btnPostionNew{
+  position: absolute;
+  bottom: 2%;
+  right: 2%
+}
+.alreadyBooked{
+  background-color: #bbb;
+  cursor:default;
+}
